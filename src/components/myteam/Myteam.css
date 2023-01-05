@@ -1,0 +1,56 @@
+.my_team_table tr{
+    vertical-align: middle;
+}
+.my_team_table #dropdownMenuButton1{
+    background-color: transparent!important;
+    border: none;
+    color: black;
+    font-size: 20px;
+    padding: 0;
+}
+.my_team_table #dropdownMenuButton1::after{
+    display: none;
+}
+.my_team_table #dropdownMenuButton1:hover,
+.my_team_table #dropdownMenuButton1:active,
+.my_team_table #dropdownMenuButton1:focus{
+    background-color: var(--darkred)!important;
+    color: white!important;
+    box-shadow: 0 0 0 0.25rem #f3000045!important;
+}
+
+/* <------View Details Page css ------> */
+
+.member_detail .userImg-prnt{
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 5px;
+}
+.member_detail .userImg-prnt img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.member_detail .dt_Row{
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #e8e8e8;
+}
+.member_detail .dt_Row:last-child{
+    border-bottom: none;
+}
+.member_detail .dt_Row .dt_col2{
+    font-weight: 600;
+    color: var(--darkgray);
+    text-align: right;
+}
+/* <------View Details Page css ends------> */
+
+@media screen and (max-width: 768px) {
+    .member_detail .dt_Row .dt_col2{
+        text-align: left;
+    }
+}

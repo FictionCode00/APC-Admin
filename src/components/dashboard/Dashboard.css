@@ -1,0 +1,35 @@
+.white_three {
+    background: #fff;
+    margin: 0px 0 24px 29px;
+    padding: 20px 25px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+.white_three h3{
+    font-size: 3rem;
+    margin-bottom: 0px;
+}
+.white_three p {
+    color: #c3c3c3;
+}
+.white_three span {
+    position: absolute;
+    width: 100px;
+    height: 60%;
+    font-size: 40px;
+    color: #fff;
+    line-height: 55px;
+    border-radius: 0px;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.white_three h3 {
+    margin-top: 0;
+}

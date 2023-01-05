@@ -1,0 +1,225 @@
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Poppins Regular'), url('../fonts/Poppins-Regular.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Poppins Thin'), url('../fonts/Poppins-Thin.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Poppins ExtraLight'), url('../fonts/Poppins-ExtraLight.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Poppins Light'), url('../fonts/Poppins-Light.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Poppins Medium'), url('../fonts/Poppins-Medium.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Poppins SemiBold'), url('../fonts/Poppins-SemiBold.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Poppins Bold'), url('../fonts/Poppins-Bold.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Poppins ExtraBold'), url('../fonts/Poppins-ExtraBold.woff') format('woff');
+    }
+    @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Poppins Black'), url('../fonts/Poppins-Black.woff') format('woff');
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --red: #f30000;
+    --white: #ffffff;
+    --darkred: #c60000;
+    --darkgray: #2b2a28;
+  }
+aside,
+section,
+article,
+p,
+div,
+span,
+figure,
+figcaption,
+img,
+input,
+form,
+html,
+footer,
+header,
+nav,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+ul {
+    list-style: none;
+}
+:focus,
+.btn:focus,
+.btn:active:focus {
+  outline: none;
+}
+html {
+    font-smooth: always;
+}
+button,
+input[type="submit"] {
+  appearance: none;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    box-sizing: border-box;
+    background: #eeeef38a;
+    color: #242424;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+/* <====== Login Page css starts here ======> */
+.main-page {
+    padding-top: 78px;
+    padding-left: 270px;
+    height: 100%;
+    /* min-width: 700px; */
+  }
+  .content_area {
+    padding: 26px;
+    position: relative;
+    /* min-height: 750px; */
+}
+  .logo_row {
+    text-align: center;
+    width: 7rem;
+    display: block;
+    margin: 0 auto;
+}
+.logo_header {
+    border-bottom: 1px solid #d6d6da;
+    padding: 20px 0;
+  }
+  .login_form_outer {
+    max-width: 430px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+  }
+  .login_form {
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  }
+  .login_form h3 {
+    border-top: 1px solid #e5e5e5;
+    color: #ca8416;
+    font-weight: 400;
+    margin: 0;
+    font-size: 25px;
+    padding-top: 20px;
+  }
+  .login_form h2 {
+    border-top: 1px solid #f6f6f6;
+    color: var(--darkgray);
+    font-weight: 400;
+    margin: 0;
+    padding-top: 20px;
+  }
+  .login_form label {
+    color: #b5bbcb;
+    font-weight: 400;
+  }
+  .login_form .form-control {
+    box-shadow: none;
+    height: auto;
+    padding: 8px 15px;
+  }
+  .forgot_password a {
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  .forgot_password a:hover {
+    text-decoration: none;
+  }
+  .login_form .form-group {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .blue_btn {
+    background-color: var(--red);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 7px 30px;
+    display: inline-block;
+    line-height: 26px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+  }
+  .blue_btn:hover {
+    background: var(--darkred);
+  }
+  .blue_btn:focus{
+    background: var(--darkred);
+    border-color: var(--darkred);
+    box-shadow: 0 0 0 0.25rem #c600004f;
+  }
+  .blue_btn:active{
+    background: var(--darkred);
+  }
+  .login_form h2 + p {
+    margin-top: 20px;
+  }
+  
+/* <====== Login Page css ends here ======> */
+
+
+
+@media screen and (max-width: 991px) {
+  .main-page {
+    padding-left: 0;
+  }
+}

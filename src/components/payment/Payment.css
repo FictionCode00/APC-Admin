@@ -1,0 +1,12 @@
+.customBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    padding: 2px 5px;
+    color: #fff;
+    background-color: var(--red);
+}
+.customBtn:last-child:hover{
+    background-color: var(--darkred);
+}
