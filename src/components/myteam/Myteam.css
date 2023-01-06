@@ -49,6 +49,82 @@
 }
 /* <------View Details Page css ends------> */
 
+/* <------Add User Page css------> */
+.tab1_prnt .img_prnt {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+    position: relative;
+}
+.tab1_prnt .img_prnt input[type="file"]{
+    right: 0;
+    bottom: 0;
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer!important;
+}
+.tab1_prnt .img_prnt img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.referal_grp{
+    position: relative;
+}
+.referal_grp .form-control[name="referral"]{
+    padding-right: 100px;
+}
+.validate_btn{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    background-color: transparent!important;
+    color: green;
+    font-weight: 500;
+    border: none!important;
+    box-shadow: none!important;
+    text-decoration: none;
+    cursor: pointer;
+    width: 72px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.validate_btn:hover{
+    color: rgb(14, 184, 14);
+}
+.PhoneInputInput{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.PhoneInputInput:focus{
+    box-shadow: var(--redshdw);
+    border-color: #f30000;
+}
+.PhoneInputCountry{
+    background: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+/* <------Add User Page css ends------> */
+
 @media screen and (max-width: 768px) {
     .member_detail .dt_Row .dt_col2{
         text-align: left;

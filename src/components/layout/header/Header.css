@@ -3,10 +3,21 @@
     padding: 20px 0;
   }
   #dropdown-basic{
-    color: #fff;
-    background-color: var(--red) !important;
-    border-color: var(--red) !important;
+    color: var(--darkgray);
+    background-color: transparent!important;
+    border-color: transparent !important;
+    outline: none!important;
+    font-size: 16px;
   }
+  #dropdown-basic:hover{
+    color: black;
+} 
+#dropdown-basic:focus{
+    box-shadow: none
+}
+#dropdown-basic:active:focus{
+    box-shadow: none;
+}
   .top-listing-header {
     display: flex;
     align-items: center;

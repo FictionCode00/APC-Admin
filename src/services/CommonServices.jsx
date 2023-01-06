@@ -20,3 +20,9 @@ export const getAllTransactionRequests=()=>{
 export const approveTransaction=(payload)=>{
     return axios.post(base_url+'admin/update-transc',payload)
 }
+export const uploadImages=(payload)=>{
+    return axios.post(base_url+"upload/uploads",payload)
+}
+export const createUser=(payload)=>{
+    return axios.post(base_url+'user/signup',payload)
+}

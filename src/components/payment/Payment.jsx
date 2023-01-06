@@ -49,7 +49,7 @@ const PaymentManagement = () => {
                         <tbody>
                             {reqList.length > 0 && reqList.map((transaction) =>
                                 <tr>
-                                    <td>{transaction.user_id}</td>
+                                    <td>{transaction.fullname}</td>
                                     <td>{transaction.transaction_id}</td>
                                     <td>{transaction.amount}</td>
                                     <td className="text-center d-flex justify-content-center">

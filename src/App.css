@@ -1,0 +1,28 @@
+.admn-sbmt-bttn{
+    background-color: var(--red) !important;
+    border-color: var(--red) !important;
+}
+.admn-sbmt-bttn:hover{
+    background-color: var(--darkred) !important;
+    border-color: var(--darkred) !important;
+}
+.admn-sbmt-bttn:focus{
+    box-shadow: var(--redshdw);
+}
+.admn-sbmt-bttn:active:focus{
+    box-shadow: var(--redshdw);
+}
+
+.form-control:focus{
+    border-color: #f30000;
+}
+.form-control:focus{
+    box-shadow: var(--redshdw);
+}
+.form-control:active:focus{
+    box-shadow: var(--redshdw);
+}
+.error-msg{
+    color: red;
+    font-size: 12px;
+}

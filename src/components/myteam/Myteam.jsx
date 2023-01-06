@@ -1,5 +1,6 @@
 import { Button, Table } from "react-bootstrap";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { BiPlus } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import './Myteam.css';
 import { useEffect, useState } from "react";
@@ -28,7 +29,10 @@ const UserList = () => {
         <>
             <div class="content_area">
                 <section className='scn-1 bg-white p-3 rounded-2'>
-                    <h4 className='light-blck heading'>My Team</h4>
+                    <div className="d-flex justify-content-between align-items-center mb-3">
+                        <h4 className='light-blck heading mb-0'>My Team</h4>
+                        <Button className="admn-sbmt-bttn pe-3" onClick={() => navigate("/users/addUser")}><BiPlus className="fs-4 me-2" />Add User</Button>
+                    </div>
                     <Table striped borderless hover variant='light' className='p-3 d_table mt-2 my_team_table' responsive>
                         <thead>
                             <tr>
@@ -58,7 +62,7 @@ const UserList = () => {
                         </tbody>
                     </Table>
                 </section>
-            </div>
+            </div >
         </>
     )
 }
