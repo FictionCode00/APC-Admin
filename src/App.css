@@ -26,3 +26,26 @@
     color: red;
     font-size: 12px;
 }
+.d_table thead tr th {
+    background: #2b2a28;
+    color: white;
+    font-weight: 500;
+}
+.d_table thead tr th:first-child{
+    border-top-left-radius: 5px;
+}
+.d_table thead tr th:last-child{
+    border-top-right-radius: 5px;
+}
+.d_table thead tr th:last-child{
+    border-top-right-radius: 5px;
+}
+.d_table tbody tr:last-child td:first-child{
+    border-bottom-left-radius: 5px;
+}
+.d_table tbody tr:last-child td:last-child{
+    border-bottom-right-radius: 5px;
+}
+.d_table tbody{
+    font-size: 14px;
+}
