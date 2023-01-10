@@ -29,7 +29,7 @@ const Dashboard = (props) => {
                                 <a>
                                     <span style={{ background: "#2e4485" }} ><FaUsers /></span>
                                     <div>
-                                        <h3 style={{ color: "#2e4485" }}>45</h3>
+                                        <h3 style={{ color: "#2e4485" }}>0</h3>
                                         <p class="text-uppercase">Total Users</p>
                                     </div>
                                 </a>
