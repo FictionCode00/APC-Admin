@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../../services/CommonServices';
 import React, { useContext } from 'react'
 import appContext from "../../context/globalContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const contextData = useContext(appContext)
@@ -18,12 +19,12 @@ const Login = () => {
                 contextData.setId(response.data.data.id)
                 localStorage.setItem('id', response.data.data.id)
                 localStorage.setItem('token', response.data.data.token)
-                // toast.success(`${response.data.data.fullname} you are logged in successfully.`)
+                toast.success(`you are logged in successfully.`)
                 navigate('/dashboard')
             }
         }).catch(err => {
             console.log(err);
-            // toast.error(err.response.data.message)
+            toast.error(err.response.data.message)
         })
     }
     return (

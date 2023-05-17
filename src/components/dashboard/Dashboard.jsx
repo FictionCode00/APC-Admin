@@ -35,13 +35,28 @@ const Dashboard = (props) => {
                                 </a>
                             </div>
                         </aside>
-                        {/* <aside class="col-lg-4">
-                            <div class="white_three">
-                                <span style={{ background: "#0cc2aa" }}><FaHandshake /></span>
-                                <h3 style={{ color: "#0cc2aa" }} >68</h3>
-                                <p class="text-uppercase">Total Approved Properties</p>
+                        <aside class="col-lg-4">
+                            <div class="white_three ms-0">
+                                <a>
+                                    <span style={{ background: "#2e4485" }} ><FaUsers /></span>
+                                    <div>
+                                        <h3 style={{ color: "#2e4485" }}>0</h3>
+                                        <p class="text-uppercase">Total Users</p>
+                                    </div>
+                                </a>
                             </div>
-                        </aside> */}
+                        </aside>
+                        <aside class="col-lg-4">
+                            <div class="white_three ms-0">
+                                <a>
+                                    <span style={{ background: "#2e4485" }} ><FaUsers /></span>
+                                    <div>
+                                        <h3 style={{ color: "#2e4485" }}>0</h3>
+                                        <p class="text-uppercase">Total Users</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </div>

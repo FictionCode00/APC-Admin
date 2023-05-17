@@ -130,3 +130,7 @@
         text-align: left;
     }
 }
+.inner-toggle .form-check-input:checked {
+    background-color: #f30000;
+    border-color: #0d6efd;
+}

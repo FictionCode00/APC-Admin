@@ -26,3 +26,7 @@ export const uploadImages=(payload)=>{
 export const createUser=(payload)=>{
     return axios.post(base_url+'user/signup',payload)
 }
+
+export const changeUserStatus=(payload)=>{
+    return axios.post(base_url+"admin/updateStatus",payload)
+}

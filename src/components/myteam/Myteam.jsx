@@ -1,10 +1,11 @@
-import { Button, Table } from "react-bootstrap";
+import { Button, Form, Table } from "react-bootstrap";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { BiPlus } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import './Myteam.css';
 import { useEffect, useState } from "react";
-import { getMembers } from '../../services/CommonServices';
+import { changeUserStatus, getMembers } from '../../services/CommonServices';
+import { toast } from "react-toastify";
 
 const UserList = () => {
     let navigate = useNavigate()
@@ -16,7 +17,30 @@ const UserList = () => {
             }
         }).catch(err => {
             console.log(err.response.message)
-            // toast.error(err.response.message)
+            toast.error(err.response.message)
+        })
+    }
+
+    const changeActivestatus = (event, id) => {
+        console.log(event.target.checked, id);
+        const payload = {}
+        if (event.target.checked) {
+
+            payload.status = 1
+            payload.id = id
+
+        }
+        else {
+            payload.status = 0
+            payload.id = id
+        }
+        changeUserStatus(payload).then(res => {
+            if (res.status === 200) {
+                toast.success("User status changes successfully.")
+                getTeamMembers()
+            }
+        }).catch(err=>{
+            toast.error(err.response.data.message)
         })
     }
 
@@ -39,6 +63,7 @@ const UserList = () => {
                                 <th>User Name</th>
                                 <th>Email</th>
                                 <th>Referral Code</th>
+                                <th>Status</th>
                                 <th className="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -48,6 +73,14 @@ const UserList = () => {
                                     <td>{user.fullname}</td>
                                     <td>{user.email}</td>
                                     <td>{user.referral_code}</td>
+                                    <td><Form.Check
+                                        type="switch"
+                                        id="custom-switch"
+                                        className="inner-toggle"
+                                        defaultChecked={user.is_active == 1}
+                                        onChange={(e) => changeActivestatus(e, user.id)}
+                                    // label="Check this switch"
+                                    /></td>
                                     <td className="text-center">
                                         <Button class="btn btn-sm dropdown-toggle" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <BsThreeDotsVertical />

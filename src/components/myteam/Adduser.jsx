@@ -6,6 +6,7 @@ import PhoneInput from "react-phone-number-input";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import uploadImage from '../../assets/images/UploadImg.jpg'
 import { createUser, uploadImages } from "../../services/CommonServices";
 
@@ -28,7 +29,7 @@ const AddUser = () => {
                         'user_img': response.data.data,
                         "phone_number": data.phoneNumber,
                         "security_pin": data.securityPin,
-                        // 'referred_by': userId
+                        'referred_by': localStorage.getItem('id')
 
                     }
                     // if (userId !== '') {
@@ -36,12 +37,11 @@ const AddUser = () => {
                     // }
                     createUser(payload).then(response => {
                         if (response.status === 200) {
-                            // toast.success(`${response.data.data.data.fullname} your account is created successfully.`)
-                            navigate('/dashboard', { state: { "name": response.data.data.data.fullname } })
-                            console.log('user created 12')
+                            toast.success(`User is created successfully.`)
+                            navigate('/users')
                         }
                     }).catch(err => {
-                        // toast.error(err.response.data.message)
+                        toast.error(err.response.data.message)
                     })
                 }
 
@@ -56,7 +56,7 @@ const AddUser = () => {
                 // 'user_img': response.data.data,
                 "phone_number": data.phoneNumber,
                 "security_pin": data.securityPin,
-                // 'referred_by': userId
+                'referred_by': localStorage.getItem('id')
 
             }
             // if (userId !== '') {
@@ -64,12 +64,12 @@ const AddUser = () => {
             // }
             createUser(payload).then(response => {
                 if (response.status === 200) {
-                    // toast.success(`${response.data.data.data.fullname} your account is created successfully.`)
-                    navigate('/dashboard', { state: { "name": response.data.data.data.fullname } })
-                    console.log('user created 11')
+                    toast.success(`User is created successfully.`)
+                    navigate('/users')
+
                 }
             }).catch(err => {
-                // toast.error(err.response.data.message)
+                toast.error(err.response.data.message)
             })
         }
     }
@@ -156,6 +156,7 @@ const AddUser = () => {
                                         <Form.Group className="mb-3">
                                             <Form.Label className='mb-0 txt-label'>Security Pin</Form.Label>
                                             <Form.Control className="rounded-2" type="text" maxLength={4} minLength={4} {...register("securityPin", { required: "Security Pin is required." })} />
+                                            {errors.securityPin && <p className='error-msg'>{errors.securityPin.message}</p>}
                                         </Form.Group>
                                     </Col>
                                 </Row>

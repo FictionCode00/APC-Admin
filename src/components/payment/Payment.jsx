@@ -29,6 +29,23 @@ const PaymentManagement = () => {
             console.log(err.response.data.message)
         })
     }
+
+    const cancelRequest=(id)=>{
+        const payload={
+            status:-1,
+            id:id
+        }
+        console.log(payload);
+        approveTransaction(payload).then(res=>{
+            if(res.status===200){
+                Swal.fire('',"Request cancelled successfully.","success")
+                getTranscList()
+            }
+        }).catch(err=>{
+            console.log(err.response.data.message)
+        })
+    }
+
     useEffect(() => {
         getTranscList()
     }, [])
@@ -56,7 +73,7 @@ const PaymentManagement = () => {
                                         <Button className="customBtn bg-success border-0" type="button" onClick={()=>approveRequest(transaction.id)}>
                                             <BiCheck />
                                         </Button>
-                                        <Button className="customBtn ms-2 border-0" type="button">
+                                        <Button className="customBtn ms-2 border-0" type="button" onClick={()=>cancelRequest(transaction.id)}>
                                             <BiX />
                                         </Button>
                                     </td>
