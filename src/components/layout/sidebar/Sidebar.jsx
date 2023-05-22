@@ -27,6 +27,10 @@ const SideMenu = () => {
         set_current_tab("paymentManagement");
         navigate('/paymentManagement')
     }
+    function Withdraws() {
+        set_current_tab("withdrawManagement");
+        navigate('/withdrawManagement')
+    }
     function Affiliates() {
         set_current_tab("affiliatesManagement");
         navigate('/affiliatesManagement')
@@ -66,6 +70,7 @@ const SideMenu = () => {
                     <li class={current_tab == "users" ? "active" : ""}><a onClick={Users}><FaUserTie /><span>Users Management</span></a></li>
                     <li class={current_tab == "referralManagement" ? "active" : ""}><a onClick={Referral}><BiTransfer /><span>Referral Management</span></a></li>
                     <li class={current_tab == "paymentManagement" ? "active" : ''}><a onClick={Payments}><FaMoneyCheck /><span>Payment management</span></a></li>
+                    <li class={current_tab == "withdrawManagement" ? "active" : ''}><a onClick={Withdraws}><FaMoneyCheck /><span>Withdraw management</span></a></li>
                     <li class={current_tab == "bonusManagement" ? "active" : ""}><a onClick={Bonus}><MdSavings /><span>Bonus Management</span></a></li>
                     <li class={current_tab == "stakeManagement" ? "active" : ""}><a onClick={Stake}><RiPriceTag2Fill /><span>Stake management</span></a></li>
                     <li class={current_tab == "coinsManagement" ? "active" : ""}><a onClick={Coins}><FaCoins /><span>Coins management</span></a></li>

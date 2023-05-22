@@ -13,6 +13,7 @@ import ReferralManagement from "../components/referral/Referral";
 import WalletManagement from "../components/wallet/Wallet";
 import appContext from "../context/globalContext";
 import AddUser from "../components/myteam/Adduser";
+import WithdrawManagement from "../components/withdraw/withdraw";
 
 const Routing = (props) => {
     const contextData = useContext(appContext)
@@ -27,6 +28,7 @@ const Routing = (props) => {
                         <Route path="/users" exact element={<UserList />} />
                         <Route path="/users/memberDetail" exact element={<UserDetail />} />
                         <Route path="/paymentManagement" exact element={<PaymentManagement />} />
+                        <Route path="/withdrawManagement" exact element={<WithdrawManagement />} />
                         <Route path="/referralManagement" exact element={<ReferralManagement />} />
                         <Route path="/bonusManagement" exact element={<BonusManagement />} />
                         <Route path="/stakeManagement" exact element={<StakeManagement />} />

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const base_url = 'https://backend.apcblockchain.com/api/'
-// const base_url = 'http://localhost:3000/api/'
-export const media_url="https://backend.apcblockchain.com/"
-// export const media_url="http://localhost:3000/"
+// const base_url = 'https://backend.apcblockchain.com/api/'
+const base_url = 'http://localhost:3000/api/'
+// export const media_url="https://backend.apcblockchain.com/"
+export const media_url="http://localhost:3000/"
 
 export const login = (payload) => {
     return axios.post(base_url + 'admin/signin', payload);
@@ -29,4 +29,8 @@ export const createUser=(payload)=>{
 
 export const changeUserStatus=(payload)=>{
     return axios.post(base_url+"admin/updateStatus",payload)
+}
+
+export const getWithdrawRequests=()=>{
+    return axios.get(base_url+'admin/getWithdrawTransactionsList')
 }
