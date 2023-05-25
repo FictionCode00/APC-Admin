@@ -1,12 +1,16 @@
 import { useEffect } from "react"
-import { getWithdrawRequests } from "../../services/CommonServices"
+import { getWithdrawRequests, updateWithdrawRequest } from "../../services/CommonServices"
 import { useState } from "react"
 import { Button, Table, Toast } from "react-bootstrap"
 import { BiCheck, BiX } from "react-icons/bi"
 import TronWeb from 'tronweb'; 
-
+import {Buffer} from 'buffer';
+import { useContext } from "react"
+import appContext from "../../context/globalContext"
+import { toast } from "react-toastify"
+window.Buffer = Buffer;
 const WithdrawManagement=()=>{
-
+    const context=useContext(appContext)
     const [reqList, setReqList] = useState([])
     const getWithdrawTranscList = () => {
         getWithdrawRequests().then(res => {
@@ -20,32 +24,65 @@ const WithdrawManagement=()=>{
         getWithdrawTranscList()
     },[])
 
-    const onHandleWithdraw=async(data)=>{
+    const UpdateStatus=(e,status,id)=>{
+        const payload={
+            status:status,
+            id:id
+        }
+        updateWithdrawRequest(payload).then(res=>{
+            if(res.status===200){
+                getWithdrawTranscList()
+                context.setLoad(false)
+                toast.success("Successfull");
+            }
+        }).catch(err=>{
+            context.setLoad(false)
+            toast.error(err.response.data.message);
+        })
+    }
+
+    const onHandleWithdraw=async(data,id)=>{
+        context.setLoad(true)
          try{
+            console.log("hereeee")
+
+ 
+
             let tronWeb1 = new TronWeb({
-                fullHost: "https://api.trongrid.io",
-                solidityNode:"https://api.trongrid.io",
-                eventServer: "https://api.trongrid.io",
-                privateKey:"a9dd75fdfc07da3626812d96546f9684ecafc525aa1eafd55d2c55136acca4df"
+                fullHost: 'https://api.trongrid.io',
+                solidityNode:'https://api.trongrid.io',
+                eventServer: 'https://api.trongrid.io',
+                privateKey:'a9dd75fdfc07da3626812d96546f9684ecafc525aa1eafd55d2c55136acca4df'
                
               });
-
-              const contract = await tronWeb1.contract().at(TA9KzpuyxiAFzBwfh8SK2ygo6SLCXdqifU);
+              console.log("2222222222",tronWeb1)
+              let contract;
+              try{
+                 contract = await tronWeb1.contract().at('TA9KzpuyxiAFzBwfh8SK2ygo6SLCXdqifU');
+                console.log("contract is------>",contract);
+              }catch(e){
+                console.log("errror is",e);
+              }
+            //   const contract = await tronWeb1.contract().at('TA9KzpuyxiAFzBwfh8SK2ygo6SLCXdqifU');
+            //   console.log("contract is------>",contract);
       
-              const amountWithDecimals = data.amount * Math.pow(10, 6);
+              const amountWithDecimals =(data.amount-data.fee) * Math.pow(10, 6);
         
               const transaction = await contract.transfer(data.toAddress, amountWithDecimals).send({
                 shouldPollResponse: true,
                 feeLimit: 1e8, // Set the maximum amount of TRX to spend on transaction fees
               });
+              console.log("ftransaction is---->",transaction)
               if(transaction){
-                Toast.success("Amount Transfer Success");
+                
+                UpdateStatus('',1,id)
               }
               
               return transaction;
 
          }catch(e){
-            Toast.error("Amount Transfer Failed ")
+            console.log("error in outer catch----->",e);
+            // Toast.error("Amount Transfer Failed ")
          }
     }
 
@@ -60,6 +97,7 @@ const WithdrawManagement=()=>{
                                 <th>User</th>
                                 <th>Wallet address</th>
                                 <th>Amount</th>
+                                <th>Fee</th>
                                 <th className="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -69,18 +107,20 @@ const WithdrawManagement=()=>{
                                     <td>{transaction.fullname}</td>
                                     <td>{transaction.address}</td>
                                     <td>{transaction.amount}</td>
+                                    <td>{transaction.fee}</td>
                                     <td className="text-center d-flex justify-content-center">
                                         <Button className="customBtn bg-success border-0" type="button" onClick={()=>{
                                             let data={
                                                 name:transaction.fullname,
-                                                address:transaction.address,
-                                                amount:transaction.amount
+                                                toAddress:transaction.address,
+                                                amount:transaction.amount,
+                                                fee:transaction.fee
                                             }
-                                            onHandleWithdraw(data)
+                                            onHandleWithdraw(data,transaction.id)
                                         }}>
                                             <BiCheck />
                                         </Button>
-                                        <Button className="customBtn ms-2 border-0" type="button">
+                                        <Button className="customBtn ms-2 border-0" type="button" onClick={(e)=>UpdateStatus(e,-1,transaction.id)}>
                                             <BiX />
                                         </Button>
                                     </td>

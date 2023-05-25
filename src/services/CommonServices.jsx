@@ -34,3 +34,7 @@ export const changeUserStatus=(payload)=>{
 export const getWithdrawRequests=()=>{
     return axios.get(base_url+'admin/getWithdrawTransactionsList')
 }
+
+export const updateWithdrawRequest=(payload)=>{
+    return axios.post(base_url+'admin/update-twithdraw-transac',payload)
+}
