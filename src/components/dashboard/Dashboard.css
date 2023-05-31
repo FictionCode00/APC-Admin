@@ -33,3 +33,105 @@
 .white_three h3 {
     margin-top: 0;
 }
+
+/* Dashboard cards */
+.main-card-pt:nth-child(1) .card {
+    border-color: #e30000;
+}
+.main-card-pt:nth-child(2) .card {
+    border-color: #2c17b3;
+}
+.main-card-pt:nth-child(3) .card {
+    border-color: #d2e624;
+}
+.main-card-pt:nth-child(4) .card {
+    border-color: #c013da;
+}
+
+.cards-scn1 .card {
+    border-color: #f30000;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.cards-scn1 .card {
+    min-height: 120px;
+    background: #fff;
+    position: relative;
+    border: 2px solid #fff;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    place-content: center;
+}
+.cards-scn1 .card .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+.main-card-pt:nth-child(1) .card-button, .card-button:hover {
+    background-color: #e30000!important;
+    border-color: #e30000;
+}
+
+.main-card-pt:nth-child(2) .card-button, .card-button:hover {
+    background-color: #2c17b3!important;
+    border-color: #2c17b3;
+}
+
+.main-card-pt:nth-child(3) .card-button, .card-button:hover {
+    background-color: #d2e624!important;
+    border-color: #d2e624;
+}
+
+.main-card-pt:nth-child(4) .card-button, .card-button:hover {
+    background-color: #c013da!important;
+    border-color: #c013da;
+}
+.cards-scn1 .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    /* background-color: #f30000; */
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 8px;
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+.cards-scn1 .card-details .c-text h6 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.main-card-pt:nth-child(1) .c-icon_bg {
+    background-color: #fedfdf;
+    color: #e30000;
+}
+
+.main-card-pt:nth-child(2) .c-icon_bg {
+    background-color: #c8c7f5;
+    color: #2c17b3;
+}
+.main-card-pt:nth-child(3) .c-icon_bg {
+    background-color: #f2f8aa;
+    color: #bdcf16;
+}
+.main-card-pt:nth-child(4) .c-icon_bg {
+    background-color: #f6bdf1;
+    color: #c013da;
+}
+.cards-scn1 .card-details .c-icon_bg {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-content: center;
+    font-size: 24px;
+}
+.cards-scn1 .card-details .c-text p {
+    color: #878a99;
+    font-size: 16px;
+}
+
+/* end of dashboard cards css */
